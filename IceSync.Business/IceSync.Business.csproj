@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup Label="Globals">
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Label="Code Analysis">
+		<AnalysisLevel>latest</AnalysisLevel>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<CodeAnalysisRuleSet Condition="'$(Configuration)'=='Debug'">..\tools\analizers.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRuleSet Condition="'$(Configuration)'=='Release'">..\tools\analizers.disable.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+	<ItemGroup Label="Projects and Files Reference">
+		<ProjectReference Include="..\IceSync.Data\IceSync.Data.csproj" />
+		<AdditionalFiles Include="..\tools\stylecop.json" />
+	</ItemGroup>
+	<ItemGroup Label="Code Analyzers">
+		<PackageReference Include="codecracker.CSharp" Version="1.1.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+		<PackageReference Include="StyleCop.Analyzers" Version="1.1.*" PrivateAssets="All" />
+		<PackageReference Include="SonarAnalyzer.CSharp" Version="8.34.0.42011" PrivateAssets="All" />
+		<PackageReference Include="RefactoringEssentials" Version="5.6.*" PrivateAssets="All" />
+		<PackageReference Include="Menees.Analyzers" Version="3.0.4" PrivateAssets="All" />
+	</ItemGroup>
+</Project>

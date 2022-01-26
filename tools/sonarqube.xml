@@ -1,0 +1,15 @@
+<SonarQubeAnalysisProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                             xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+    <Property Name="sonar.host.url">https://sonar-dev.devsmm.com/</Property>
+    <Property Name="sonar.projectKey">humate</Property>
+    <Property Name="sonar.projectName">Humate</Property>
+    <Property Name="sonar.login">$LOGIN_KEY</Property>
+    <Property Name="sonar.projectDescription">A .NET reporting project.</Property>
+    <Property Name="sonar.exclusions">**/node_modules/**/*,**/*.exe,**/*.dll,**/*.resx,**/*.pdb,**/*.png,**/*.test.js,**/*.spec.js,**/Migrations/**/*</Property>
+    <Property Name="sonar.test.inclusions">**/*.test.js,**/*.spec.js</Property>
+    <Property Name="sonar.cs.vstest.reportsPaths">$BASE_PATH/TestResults/*.trx</Property>
+    <Property Name="sonar.cs.opencover.reportsPaths">$BASE_PATH/TestResults/coverage.opencover.xml</Property>
+    <Property Name="sonar.testExecutionReportPaths">$BASE_PATH/Humate.Presentation.Web/ClientApp/test-report.xml</Property>
+    <Property Name="sonar.javascript.lcov.reportPaths">$BASE_PATH/Humate.Presentation.Web/ClientApp/coverage/lcov.info</Property>
+</SonarQubeAnalysisProperties>
